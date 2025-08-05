@@ -44,6 +44,74 @@ body {
   color: #333;
 }
 
+body.light {
+  background-color: #FFFBEA; /* pale yellow */
+  color: #6B5E3C; /* warm brown for text */
+}
+
+body.dark {
+  background-color: #23272F; /* modern soft gray */
+  color: #E0E0E0; /* light gray text */
+}
+
+.theme-toggle-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #FFFBEA;
+  color: #6B5E3C;
+  border: 2px solid #E6DFA6;
+  border-radius: 2rem;
+  width: 60px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  z-index: 1000;
+  font-size: 1.2rem;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(200, 180, 80, 0.08);
+}
+
+.theme-toggle-btn.light {
+  background: #FFFBEA;
+  color: #6B5E3C;
+  border: 2px solid #E6DFA6;
+}
+
+.theme-toggle-btn.dark {
+  background: #23272F;
+  color: #FFD700;
+  border: 2px solid #444950;
+}
+
+.theme-toggle-btn .toggle-thumb {
+  width: 24px;
+  height: 24px;
+  background: #FFD700;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  margin-right: 8px;
+  transform: translateX(0);
+  border: 1.5px solid #E6DFA6;
+}
+
+.theme-toggle-btn.dark .toggle-thumb {
+  background: #444950;
+  border: 1.5px solid #FFD700;
+  transform: translateX(24px);
+}
+
+.theme-toggle-btn.light .toggle-thumb {
+  background: #FFD700;
+  border: 1.5px solid #E6DFA6;
+  transform: translateX(0);
+}
+
 .App {
   min-height: 100vh;
 }
